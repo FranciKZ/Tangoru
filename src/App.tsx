@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import Keyboard from './containers/Keyboard/Keyboard';
 
 function App() {
   return (
     <div className="App">
-      <p>hello</p>
+      <Keyboard />
     </div>
   );
 }
