@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@testing-library/react": "^12.1.2",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.4.0",
@@ -36,7 +37,6 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/react": "^12.1.2",
     "@typescript-eslint/parser": "^5.10.2",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "19.0.4",
