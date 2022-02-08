@@ -2,7 +2,7 @@ name: CI
 on: [push]
 jobs:
   build:
-    name: build
+    name: lint_and_test
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -11,3 +11,4 @@ jobs:
           node-version: '16'
       - run: yarn install
       - run: yarn lint
+      - run: yarn test
