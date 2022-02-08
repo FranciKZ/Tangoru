@@ -1,5 +1,5 @@
 import React from 'react';
-import IKeyboardButton from '../../interfaces/IKeyboardButton';
+import IKeyboardButton from '../../models/IKeyboardButton';
 
 interface IKeyboardButtonProps {
   buttonData: IKeyboardButton;

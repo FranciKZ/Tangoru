@@ -1,4 +1,4 @@
-import IKeyboardButton from '../interfaces/IKeyboardButton';
+import IKeyboardButton from '../models/IKeyboardButton';
 
 const keyboard: IKeyboardButton[][] = [
   [

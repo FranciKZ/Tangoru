@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import keyboard from '../../assets/keyboard';
 import KeyboardRow from '../../components/KeyboardRow/KeyboardRow';
-import IKeyboardButton from '../../interfaces/IKeyboardButton';
+import IKeyboardButton from '../../models/IKeyboardButton';
 
 function Keyboard() {
   const [modifiers, setModifiers] = useState({
