@@ -19,6 +19,7 @@ function KeyboardRow({
     return rowData.map((value: IKeyboardButton) => {
       return (
         <KeyboardButton
+          key={`key_${value.id}`}
           buttonData={value}
           useLittle={useLittle}
           useModifier={useModifier}

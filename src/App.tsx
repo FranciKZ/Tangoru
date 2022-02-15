@@ -3,6 +3,7 @@ import './App.css';
 import Board from './containers/Board/Board';
 import Keyboard from './containers/Keyboard/Keyboard';
 import GameProvider from './context/GameState';
+import keyboard from './assets/keyboard';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <GameProvider>
         <Board />
       </GameProvider>
-      <Keyboard />
+      <Keyboard keyboardData={keyboard} />
     </div>
   );
 }
