@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import KeyboardButton from '../components/KeyboardButton/KeyboardButton';
-import IKeyboardButton from '../models/IKeyboardButton';
+import KeyboardButton from '../../components/KeyboardButton/KeyboardButton';
+import IKeyboardButton from '../../models/IKeyboardButton';
 
 const testButtonData: IKeyboardButton = {
   id: 'b337_43',

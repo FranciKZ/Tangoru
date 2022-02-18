@@ -10,8 +10,8 @@ function App() {
     <div className="App">
       <GameProvider>
         <Board />
+        <Keyboard keyboardData={keyboard} />
       </GameProvider>
-      <Keyboard keyboardData={keyboard} />
     </div>
   );
 }

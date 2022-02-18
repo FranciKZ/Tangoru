@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import Keyboard from '../containers/Keyboard/Keyboard';
+import Keyboard from '../../containers/Keyboard/Keyboard';
 
 const testKeyboardData = [
   [
@@ -45,7 +45,7 @@ test('keyboard should render buttons', () => {
   expect(screen.getByText('ヤ', { selector: 'button' })).toBeInTheDocument();
 });
 
-test('clicking modifier button should change keys', () => {
+test('switching modifiers should work as expected', () => {
   const { rerender } = render(<Keyboard keyboardData={testKeyboardData} />);
 
   fireEvent.click(screen.getByText('modify', { selector: 'button' }));
