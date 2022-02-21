@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^5.10.2",
+    "@welldone-software/why-did-you-render": "^6.2.3",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-airbnb-typescript": "^16.1.0",

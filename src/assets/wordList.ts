@@ -1,16 +1,13 @@
 const wordList = [
-  'test',
-  'were',
-  'asdf',
-  'erty',
-  'wert',
-  'yuio',
-  'hjkl',
-  'dfgh',
-  'cvbn',
-  'ewrt',
-  'xcbv',
-  'poit',
+  'ストレー',
+  'オープン',
+  'センシビ',
+  'ウルバリ',
+  'カットオ',
+  'アポクリ',
+  'スターテ',
+  'ヘモグロ',
+  'ベリーダ',
 ];
 
 export default wordList;

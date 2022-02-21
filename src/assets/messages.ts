@@ -1,10 +1,10 @@
 const messages = {
   toastNotInList: {
-    english: 'test',
+    english: 'Word not in word list',
     japanese: 'test',
   },
   toastNotLongEnough: {
-    english: 'test',
+    english: 'Looking for words that are 4 characters long',
     japanese: 'test',
   },
 };

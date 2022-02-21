@@ -42,4 +42,5 @@ function KeyboardRow({
   );
 }
 
-export default KeyboardRow;
+KeyboardRow.whyDidYouRender = true;
+export default React.memo(KeyboardRow);

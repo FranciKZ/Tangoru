@@ -1,3 +1,4 @@
+import EvaluationTypes from './EvaluationTypes';
 import GameStateTypes from './GameStateTypes';
 import IBoardState from './IBoardState';
 
@@ -10,15 +11,15 @@ interface IGameState {
 
 export const initialGameState: IGameState = {
   board: [
-    { word: '', evaluation: [] },
-    { word: '', evaluation: [] },
-    { word: '', evaluation: [] },
-    { word: '', evaluation: [] },
-    { word: '', evaluation: [] },
-    { word: '', evaluation: [] },
+    { word: '', evaluation: new Array(4).fill(EvaluationTypes.UNEVALUATED) },
+    { word: '', evaluation: new Array(4).fill(EvaluationTypes.UNEVALUATED) },
+    { word: '', evaluation: new Array(4).fill(EvaluationTypes.UNEVALUATED) },
+    { word: '', evaluation: new Array(4).fill(EvaluationTypes.UNEVALUATED) },
+    { word: '', evaluation: new Array(4).fill(EvaluationTypes.UNEVALUATED) },
+    { word: '', evaluation: new Array(4).fill(EvaluationTypes.UNEVALUATED) },
   ],
   solution: '',
-  currentRow: 1,
+  currentRow: 0,
   gameStatus: GameStateTypes.IN_PROGRESS,
 };
 

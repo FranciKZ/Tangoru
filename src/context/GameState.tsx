@@ -15,17 +15,17 @@ import IGameState, { initialGameState } from '../models/IGameState';
 import evaluateState from '../utils/GameStateUtils';
 
 type VoidFunction = () => void;
-type GameContextValue = [
-  IGameState,
-  Dispatch<SetStateAction<IGameState>>,
-  VoidFunction
-];
+type GameContextValue = {
+  gameState: IGameState;
+  setGameState: Dispatch<SetStateAction<IGameState>>;
+  submitGuess: VoidFunction;
+};
 
-const GameContext = createContext<GameContextValue>([
-  initialGameState,
-  () => {},
-  () => {},
-]);
+const GameContext = createContext<GameContextValue>({
+  gameState: initialGameState,
+  setGameState: () => {},
+  submitGuess: () => {},
+});
 
 function GameProvider({ children }: { children: React.ReactNode }) {
   const [gameState, setGameState] = useLocalStorageState(
@@ -33,20 +33,18 @@ function GameProvider({ children }: { children: React.ReactNode }) {
     initialGameState
   );
 
-  const submitGuess = useCallback(() => {
+  const submitGuess = useCallback((): void => {
     if (
       gameState.board[gameState.currentRow].word.length !==
       gameState.solution.length
     ) {
       toast(messages.toastNotLongEnough.english);
+    } else if (!wordList.includes(gameState.board[gameState.currentRow].word)) {
+      toast(messages.toastNotInList.english);
+    } else {
+      const newGameState = evaluateState(gameState);
+      setGameState(newGameState);
     }
-
-    if (!wordList.includes(gameState.board[gameState.currentRow].word)) {
-      toast(messages.toastNotLongEnough.english);
-    }
-
-    const newGameState = evaluateState(gameState);
-    setGameState(newGameState);
   }, [gameState, setGameState]);
 
   useEffect(() => {
@@ -63,7 +61,11 @@ function GameProvider({ children }: { children: React.ReactNode }) {
   }, [setGameState]);
 
   const gameValue = useMemo(
-    (): GameContextValue => [gameState, setGameState, submitGuess],
+    (): GameContextValue => ({
+      gameState,
+      setGameState,
+      submitGuess,
+    }),
     [gameState, setGameState, submitGuess]
   );
   return (

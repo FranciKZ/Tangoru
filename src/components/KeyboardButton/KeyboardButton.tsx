@@ -30,7 +30,7 @@ function KeyboardButton({
 
   return (
     <button
-      onClick={() => handleClick()}
+      onClick={handleClick}
       type="button"
       style={{
         minWidth: '30px',
@@ -44,4 +44,5 @@ function KeyboardButton({
   );
 }
 
+KeyboardButton.whyDidYouRender = true;
 export default KeyboardButton;
