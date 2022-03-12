@@ -26,6 +26,7 @@ test('loads button with main', () => {
       onClick={(e: string) => {
         console.log(e);
       }}
+      evaluationMap={{}}
     />
   );
 
@@ -41,6 +42,7 @@ test('loads button with little', () => {
       onClick={(e: string) => {
         console.log(e);
       }}
+      evaluationMap={{}}
     />
   );
 
@@ -56,6 +58,7 @@ test('loads button with modifier', () => {
       onClick={(e: string) => {
         console.log(e);
       }}
+      evaluationMap={{}}
     />
   );
 
@@ -76,12 +79,14 @@ test('clicking modifier button changes', async () => {
         useLittle={false}
         useModifier={useModifier}
         onClick={handleModifierClick}
+        evaluationMap={{}}
       />
       <KeyboardButton
         buttonData={testModifierData}
         useLittle={false}
         useModifier={useModifier}
         onClick={handleModifierClick}
+        evaluationMap={{}}
       />
     </>
   );
@@ -95,6 +100,7 @@ test('clicking modifier button changes', async () => {
       useLittle={false}
       useModifier={useModifier}
       onClick={handleModifierClick}
+      evaluationMap={{}}
     />
   );
   const result = screen.getByText('ta', { selector: 'button' });

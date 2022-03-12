@@ -1,4 +1,5 @@
 import EvaluationTypes from '../models/EvaluationTypes';
+import GameStateTypes from '../models/GameStateTypes';
 import IGameState from '../models/IGameState';
 
 const evaluateState = (currentState: IGameState) => {
@@ -37,7 +38,33 @@ const evaluateState = (currentState: IGameState) => {
 
   board[currentState.currentRow].evaluation = evals;
 
-  return { ...currentState, currentRow: currentState.currentRow + 1, board };
+  let gameState = GameStateTypes.IN_PROGRESS;
+
+  if (currentGuess === solution) {
+    gameState = GameStateTypes.WON;
+  } else if (currentState.currentRow + 1 > 6) {
+    gameState = GameStateTypes.LOST;
+  }
+
+  return {
+    ...currentState,
+    currentRow:
+      gameState === GameStateTypes.IN_PROGRESS
+        ? currentState.currentRow + 1
+        : currentState.currentRow,
+    board,
+  };
+};
+
+export const createUpdatedGameState = (prevState: IGameState, char: string) => {
+  const result = { ...prevState };
+  const { word } = result.board[result.currentRow];
+  if (char === 'backspace') {
+    result.board[result.currentRow].word = word.slice(0, word.length - 1);
+  } else if (word.length < 4) {
+    result.board[result.currentRow].word = word + char;
+  }
+  return result;
 };
 
 export default evaluateState;

@@ -13,7 +13,16 @@ function Board() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <div
+      style={{
+        display: 'grid',
+        height: '50%',
+        width: '50%',
+        gridGap: '5px',
+        gridTemplateRows: 'repeat(6, 1fr)',
+        marginBottom: '20px',
+      }}
+    >
       {renderWordRows()}
     </div>
   );

@@ -1,34 +1,10 @@
 import React from 'react';
-import IKeyboardButton from '../../models/IKeyboardButton';
-import KeyboardButton from '../KeyboardButton/KeyboardButton';
 
 interface IKeyboardRowProps {
-  rowData: IKeyboardButton[];
-  useLittle: boolean;
-  useModifier: boolean;
-  handleButtonClick: (char: string) => void;
+  children: React.ReactNode;
 }
 
-function KeyboardRow({
-  rowData,
-  useLittle,
-  useModifier,
-  handleButtonClick,
-}: IKeyboardRowProps) {
-  const renderKeys = () => {
-    return rowData.map((value: IKeyboardButton) => {
-      return (
-        <KeyboardButton
-          key={`key_${value.id}`}
-          buttonData={value}
-          useLittle={useLittle}
-          useModifier={useModifier}
-          onClick={handleButtonClick}
-        />
-      );
-    });
-  };
-
+function KeyboardRow({ children }: IKeyboardRowProps) {
   return (
     <div
       style={{
@@ -37,7 +13,7 @@ function KeyboardRow({
         justifyContent: 'center',
       }}
     >
-      {renderKeys()}
+      {children}
     </div>
   );
 }

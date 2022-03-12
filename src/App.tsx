@@ -8,7 +8,15 @@ import keyboard from './assets/keyboard';
 
 function App() {
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        height: '100%',
+      }}
+    >
       <Toaster />
       <GameProvider>
         <Board />

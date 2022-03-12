@@ -8,6 +8,8 @@ const wordList = [
   'スターテ',
   'ヘモグロ',
   'ベリーダ',
+  'リクポア',
+  'ベポクア',
 ];
 
 export default wordList;

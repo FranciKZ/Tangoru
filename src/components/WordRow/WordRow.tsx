@@ -19,6 +19,7 @@ function WordRow({ rowIndex }: WordRowsProps) {
           key={`square_${rowIndex}${i}`}
           character={gameStateRow.word.charAt(i)}
           evaluation={gameStateRow.evaluation[i]}
+          isInCurrentRow={rowIndex === gameState.currentRow}
         />
       );
     }
@@ -27,8 +28,17 @@ function WordRow({ rowIndex }: WordRowsProps) {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
-      {renderLetterSquares()}
+    <div style={{ display: 'block' }}>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gridGap: '5px',
+          height: '100%',
+        }}
+      >
+        {renderLetterSquares()}
+      </div>
     </div>
   );
 }

@@ -22,7 +22,7 @@ test('evaluateState should return correct evaluations for correct guess', () => 
 
   expect(result).toEqual({
     ...testState,
-    currentRow: 1,
+    currentRow: 0,
     board: [
       {
         word: 'lair',
